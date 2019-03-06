@@ -18,7 +18,11 @@ class Register extends Component {
           <br/>
           <input placeholder="Phone Number" name = "phoneNumber"/>
           <input placeholder="Email" name = "email" required/>
+          <br/>
+          <input placeholder="Major" name = "studentMajor" required />
           <input placeholder="Student ID" name = "studentID" required/>
+          <br/>
+          <input placeholder = "age" name = "studentAge" required/>
           <br/>
           <br/>
           <label>
