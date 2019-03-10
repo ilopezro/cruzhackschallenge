@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../css/style.css'
 
 class Index extends Component {
 
@@ -20,25 +21,43 @@ class Index extends Component {
     .then(response => response.json())
     .then(data => 
       this.setState({
-        users: data, 
+        users: data
       })
       )
   }
 
   componentDidMount(){
-    this.fetchUser(); 
+    this.fetchUser()
   }
-
+  
   render() {
     return (
     <div>
-      <div>
+      <div className="indexHeader">
         <h2>Hackers</h2>
       </div>
-      <div>
-      {this.state.users.map((item) =>
-        <h4 key = {item.unique_id}>{item.first_name} {item.last_name}</h4>)
-        }
+      <div className="hackerDiv">
+        <table>
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Student ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.users.map((item) =>
+              <tr key = {item.unique_id}>
+              <td>{item.first_name}</td>
+              <td>{item.last_name} </td>
+              <td>{item.student_id}</td>
+              </tr>
+              )}
+          </tbody>
+        </table>
+      </div>
+      <div className="hackerInfo">
+      This is hacker info
       </div>
     </div>
     );

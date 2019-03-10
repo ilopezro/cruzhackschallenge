@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './styles.css'
 
 class AboutUs extends Component {
     render() {

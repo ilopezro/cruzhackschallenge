@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
-import Announcements from './components/Announcements'
+import Announcements from './components/Annoucements/Announcements'
 import Index from './components/index'
-import CheckIn from './components/CheckIn'
-import Register from './components/Register';
+import CheckIn from './components/CheckIn/CheckIn'
+import Register from './components/Register'
+import './css/style.css'
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <ul>
-            <Link to = "/"> Home </Link>
+        <div className = "header">
+          <ul className="topBar">
+            <Link to = "/" className="home"> Home </Link>
             <Link to = "/Announcements"> Announcements</Link>
             <Link to = "/CheckIn"> Check-In </Link>
             <Link to = "/Register"> Register </Link>
