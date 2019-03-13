@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './index.css'
 
 class Index extends Component {
 
@@ -35,6 +36,7 @@ class Index extends Component {
       <div className="indexHeader">
         <h1>Hackers</h1>
       </div>
+      <div className = "hackerRow">
       <div className="hackerDiv">
         <table>
           <thead>
@@ -57,6 +59,8 @@ class Index extends Component {
       </div>
       <div className="hackerInfo">
       This is hacker info
+      </div>
+      
       </div>
     </div>
     );
