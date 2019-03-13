@@ -12,7 +12,7 @@ class Register extends Component {
       return (
         <form action = "/signUpUser" method = "POST">
         <h1>Welcome to Registration Page. </h1>
-        <h4>Please fill out form and submit. Give an answer to every starred box. </h4>
+        <h4>Please fill out form and submit. Give an answer to every starred box. </h4> 
           <input placeholder="First Name" name = "firstName" required/>
           <input placeholder="Last Name" name = "lastName" required/>
           <br/>

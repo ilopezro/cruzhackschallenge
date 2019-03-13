@@ -4,7 +4,6 @@ import Announcements from './components/Annoucements/Announcements'
 import Index from './components/index'
 import CheckIn from './components/CheckIn/CheckIn'
 import Register from './components/Register'
-import './css/style.css'
 
 class App extends Component {
   render() {

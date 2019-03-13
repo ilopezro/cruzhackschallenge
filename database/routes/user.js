@@ -43,7 +43,7 @@ router.get("/hackers/:id", (req, res) => {
   }); 
 })
 
-function checkIn(studentID){
+function checkIn(studentID, req, res){
   const queryString = "update hackers set isCheckedIn = 1 where student_id = ?"
   getConnection().query(queryString, [studentID], (err, rows, fields) =>{
     if(err){
@@ -76,7 +76,7 @@ router.post('/checkUserIn', (req, res) =>{
       return 
     }
     if(rows.length != 0){
-      checkIn(studentID)
+      checkIn(studentID, req, res)
     }else{
       console.log("unknown user")
       res.send("unable to check hacker in. please check to see if you entered correct info"); 

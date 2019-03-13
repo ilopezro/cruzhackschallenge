@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import '../css/style.css'
 
 class Index extends Component {
 
@@ -34,7 +33,7 @@ class Index extends Component {
     return (
     <div>
       <div className="indexHeader">
-        <h2>Hackers</h2>
+        <h1>Hackers</h1>
       </div>
       <div className="hackerDiv">
         <table>
