@@ -9,13 +9,13 @@ class CheckIn extends Component {
           <h4>Enter name of student and student ID number to register user</h4>
           <form className = "checkInForm" action = "/checkUserIn" method = "POST">
             First Name:
-            <input placeholder="First Name" name = "firstName"/>
+            <input className = "firstNameInput" placeholder="First Name" name = "firstName"/>
             <br/>
             Last Name:
-            <input placeholder="Last Name" name = "lastName"/>
+            <input className = "lastNameInput" placeholder="Last Name" name = "lastName"/>
             <br/>
             Student ID:
-            <input placeholder="Student ID #" name = "studentID"/>
+            <input className = "idInput" placeholder="Student ID #" name = "studentID"/>
             <br/>
             <button className = "button">Check-In</button>
           </form>
