@@ -6,7 +6,7 @@ class CheckIn extends Component {
       return (
         <div className = "message">
           <h1>Welcome to Check-In</h1>
-          <h4>Enter name of student and student ID number to register user</h4>
+          <h4>Enter name of student and student ID number to Check user In</h4>
           <form className = "checkInForm" action = "/checkUserIn" method = "POST">
             First Name:
             <input className = "firstNameInput" placeholder="First Name" name = "firstName"/>

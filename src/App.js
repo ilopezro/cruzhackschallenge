@@ -11,25 +11,25 @@ class App extends Component {
     return (
       <Router>
         <div className = "App">
-        <div className = "header">
-        <ul className="topBar">
-            <Link to = "/" className="home"> Home </Link>
-            <Link to = "/Announcements" className = "announcements"> Announcements</Link>
-            <Link to = "/CheckIn" className = "checkIn"> Check-In </Link>
-            <Link to = "/Register" className = "register"> Register </Link>
-          </ul>
-        </div>
-        <div className="content">
-          <Switch>
-            <Route exact path="/" component={Index} />
-            <Route path="/Announcements" component={Announcements} />
-            <Route path="/CheckIn" component={CheckIn} />
-            <Route path="/Register" component={Register} />
-          </Switch>
-        </div>
-        <div className = "footer">
-          <footer>Hello from footer</footer>
-        </div>
+          <div className = "header">
+          <ul className="topBar">
+              <Link to = "/" className="home"> Home </Link>
+              <Link to = "/Announcements" className = "announcements"> Announcements</Link>
+              <Link to = "/CheckIn" className = "checkIn"> Check-In </Link>
+              <Link to = "/Register" className = "register"> Register </Link>
+            </ul>
+          </div>
+          <div className="content">
+            <Switch>
+              <Route exact path="/" component={Index} />
+              <Route path="/Announcements" component={Announcements} />
+              <Route path="/CheckIn" component={CheckIn} />
+              <Route path="/Register" component={Register} />
+            </Switch>
+          </div>
+          <div className = "footer">
+            <footer>Hello from footer</footer>
+          </div>
         </div>
       </Router>
     );
