@@ -55,6 +55,34 @@ router.get('/totalHackers', (req, res) => {
   })
 })
 
+router.get('/totalDietRest', (req, res) => {
+  res.contentType('application/json');
+  const queryString = "select count(dietRest) as totalDiet from hackers where dietRest = 1;"
+  getConnection().query(queryString, (err, rows, fields) =>{
+    if (err){
+      console.log("failed to count the total users"); 
+      res.sendStatus(500)
+      return
+    }
+    console.log(rows)
+    res.send(JSON.stringify(rows))
+  })
+})
+
+router.get('/totalHandicap', (req, res) => {
+  res.contentType('application/json');
+  const queryString = "select count(physDis) as handicap from hackers where physDis = 1;"
+  getConnection().query(queryString, (err, rows, fields) =>{
+    if (err){
+      console.log("failed to count the total users"); 
+      res.sendStatus(500)
+      return
+    }
+    console.log(rows)
+    res.send(JSON.stringify(rows))
+  })
+})
+
 router.get("/hackers/:id", (req, res) => {
   res.type('application/json');
   console.log("requesting data from: " + req.params.id)

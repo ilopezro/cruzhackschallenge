@@ -8,7 +8,9 @@ class Index extends Component {
     this.state = {
       users: [],
       checkedInHackers: [], 
-      totalHackers: []
+      totalHackers: [], 
+      totalDietRest: [], 
+      totalPhysRest: []
     }
   }
 
@@ -60,11 +62,44 @@ class Index extends Component {
     )
   }
 
+  fetchTotalDiet(){
+    fetch('/totalDietRest', {
+      method: 'GET',
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data =>
+        this.setState({
+          totalDietRest: data
+      })
+    )
+  }
+
+  fetchTotalPhys(){
+    fetch('/totalHandicap', {
+      method: 'GET',
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data =>
+        this.setState({
+          totalPhysRest: data
+      })
+    )
+  }
 
   componentDidMount(){
     this.fetchUser();
     this.fetchCheckedIn(); 
-    this.fetchTotal(); 
+    this.fetchTotal();
+    this.fetchTotalDiet() 
+    this.fetchTotalPhys()
   }
   
   render() {
@@ -101,6 +136,12 @@ class Index extends Component {
           )}
         {this.state.totalHackers.map((item) => 
           <h1 key = {item}>Total Hackers: {item.totalHackers}</h1>
+          )}
+          {this.state.totalDietRest.map((item) => 
+          <h1 key = {item}>Diet Restrictions: {item.totalDiet}</h1>
+          )}
+          {this.state.totalPhysRest.map((item) => 
+          <h1 key = {item}>Physical Restrictions: {item.handicap}</h1>
           )}
       </div>
       
