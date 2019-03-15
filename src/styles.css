@@ -1,0 +1,30 @@
+.footer {
+    background-color: grey;
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .topBar {
+    overflow: hidden;
+    background-color: grey;
+  }
+
+  .home, .announcements, .checkIn, .register  {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .home:hover, .announcements:hover, .checkIn:hover, .register:hover {
+    background-color: white;
+    color: black;
+  }
+  

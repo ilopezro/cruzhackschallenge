@@ -18,8 +18,11 @@ const index = require('./routes/index.js')
 app.use(index); 
 
 app.get('/', function(req, res) {
+  res.contentType('application/json')
+  res.type('application/json')
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
+
 
 const PORT = process.env.PORT || 3001
 

@@ -1,0 +1,20 @@
+.hackerRow, .indexRow{
+    display: -webkit-flex;
+    display: flex;
+}
+
+
+.hackerDiv, .hackerHeader{
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    border-style: hidden;
+    border-width: 100%;
+    text-align: left;
+}
+
+.hackerInfo, .dataHeader{
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    border-style: hidden;
+    border-width: 50%;
+}
