@@ -14,5 +14,4 @@ function getConnection(){
     return pool
 } 
 
-
 module.exports = router; 
