@@ -14,6 +14,11 @@
   box-sizing: border-box;
 }
 
+.dietInput, .physInput{
+  width: 8%;
+}
+
+
 .button{
     width: 10%;
     align-content: center;
