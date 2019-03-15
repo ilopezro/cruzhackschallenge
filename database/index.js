@@ -7,7 +7,7 @@ const cors = require('cors')
 
 app.use(cors())
 
-app.use(express.static('./public'))
+app.use(express.static('../public'))
 app.use(morgan('short'))
 
 app.use(bodyParser.urlencoded({extended: false}))
