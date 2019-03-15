@@ -19,14 +19,9 @@ app.use(user);
 const index = require('./routes/index.js')
 app.use(index); 
 
-app.get('/test', function(req,res){
-  return res.send("hello from test")
-})
-
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get('./*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
-
 
 const PORT = process.env.PORT || 3001
 
