@@ -15,7 +15,7 @@ function getConnection(){
 } 
 
 router.get("/hackers", (req, res) => {
-  res.type('application/json');
+  res.contentType('application/json');
   const queryString = "select * from hackers";
   getConnection().query(queryString, (err, rows, fields) =>{
     if (err){
@@ -25,6 +25,19 @@ router.get("/hackers", (req, res) => {
     }
     res.send(JSON.stringify(rows))
   }); 
+})
+
+router.get("/checkedInHackers", (req,res) =>{
+  res.contentType('application/json')
+  const queryString = "select count(isCheckedIn) as checkedInCount FROM hackers where isCheckedIn = 1;"
+  getConnection().query(queryString, (err, rows, fields) =>{
+    if (err){
+      console.log("failed to count the total users"); 
+      res.sendStatus(500)
+      return
+    }
+    res.send(JSON.stringify(rows))
+  })
 })
 
 router.get("/hackers/:id", (req, res) => {

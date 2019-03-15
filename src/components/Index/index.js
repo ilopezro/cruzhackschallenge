@@ -6,7 +6,8 @@ class Index extends Component {
   constructor(props){
     super(props)
     this.state = {
-      users: []
+      users: [],
+      hackerInfo: []
     }
   }
 
@@ -26,8 +27,26 @@ class Index extends Component {
       )
   }
 
+  fetchHackerInfo(){
+    fetch('/checkedInHackers', {
+      method: 'GET',
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data =>
+      this.setState({
+        hackerInfo: data
+      })
+      )
+  }
+
+
   componentDidMount(){
-    this.fetchUser()
+    this.fetchUser();
+    this.fetchHackerInfo(); 
   }
   
   render() {
@@ -58,7 +77,9 @@ class Index extends Component {
         </table>
       </div>
       <div className="hackerInfo">
-      This is hacker info
+        {this.state.hackerInfo.map((item) => 
+          <h1>Hackers checked in: {item.checkedInCount}</h1>
+          )}
       </div>
       
       </div>
