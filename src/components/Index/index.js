@@ -7,7 +7,8 @@ class Index extends Component {
     super(props)
     this.state = {
       users: [],
-      hackerInfo: []
+      checkedInHackers: [], 
+      totalHackers: []
     }
   }
 
@@ -27,7 +28,7 @@ class Index extends Component {
       )
   }
 
-  fetchHackerInfo(){
+  fetchCheckedIn(){
     fetch('/checkedInHackers', {
       method: 'GET',
       headers:{
@@ -38,47 +39,68 @@ class Index extends Component {
     .then(res => res.json())
     .then(data =>
       this.setState({
-        hackerInfo: data
+        checkedInHackers: data
       })
       )
+  }
+
+  fetchTotal(){
+    fetch('/totalHackers', {
+      method: 'GET',
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data =>
+        this.setState({
+          totalHackers: data
+      })
+    )
   }
 
 
   componentDidMount(){
     this.fetchUser();
-    this.fetchHackerInfo(); 
+    this.fetchCheckedIn(); 
+    this.fetchTotal(); 
   }
   
   render() {
     return (
     <div>
-      <div className="indexHeader">
-        <h1>Hackers</h1>
+      <div className="indexRow">
+        <h1 className = "hackerHeader">Hackers</h1>
+        <h1 className = "dataHeader">Data</h1>
       </div>
       <div className = "hackerRow">
-      <div className="hackerDiv">
-        <table>
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Student ID</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.users.map((item) =>
-              <tr key = {item.unique_id}>
-              <td>{item.first_name}</td>
-              <td>{item.last_name} </td>
-              <td>{item.student_id}</td>
+        <div className="hackerDiv">
+          <table>
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Student ID</th>
               </tr>
-              )}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {this.state.users.map((item) =>
+                <tr key = {item.unique_id}>
+                <td>{item.first_name}</td>
+                <td>{item.last_name} </td>
+                <td>{item.student_id}</td>
+                </tr>
+                )}
+            </tbody>
+          </table>
+        </div>
       <div className="hackerInfo">
-        {this.state.hackerInfo.map((item) => 
-          <h1>Hackers checked in: {item.checkedInCount}</h1>
+        {this.state.checkedInHackers.map((item) => 
+          <h1 key = {item}>Hackers checked in: {item.checkedInCount}</h1>
+          )}
+        {this.state.totalHackers.map((item) => 
+          <h1 key = {item}>Total Hackers: {item.totalHackers}</h1>
           )}
       </div>
       

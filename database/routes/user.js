@@ -32,10 +32,25 @@ router.get("/checkedInHackers", (req,res) =>{
   const queryString = "select count(isCheckedIn) as checkedInCount FROM hackers where isCheckedIn = 1;"
   getConnection().query(queryString, (err, rows, fields) =>{
     if (err){
+      console.log("failed to count the total checked in users"); 
+      res.sendStatus(500)
+      return
+    }
+    console.log(rows)
+    res.send(JSON.stringify(rows))
+  }) 
+})
+
+router.get('/totalHackers', (req, res) => {
+  res.contentType('application/json');
+  const queryString = "select count(unique_id) as totalHackers from hackers;"
+  getConnection().query(queryString, (err, rows, fields) =>{
+    if (err){
       console.log("failed to count the total users"); 
       res.sendStatus(500)
       return
     }
+    console.log(rows)
     res.send(JSON.stringify(rows))
   })
 })
