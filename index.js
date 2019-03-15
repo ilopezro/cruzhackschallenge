@@ -19,7 +19,7 @@ app.use(user);
 const index = require('./routes/index.js')
 app.use(index); 
 
-app.get('./*', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
