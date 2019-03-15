@@ -7,6 +7,20 @@ import Register from './components/Register/Register'
 import './styles.css'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {}
+    this.connectToServer = this.connectToServer.bind(this);
+  }
+
+  connectToServer(){
+    fetch('/');
+  }
+
+  componentDidMount(){
+    this.connectToServer()
+  }
+
   render() {
     return (
       <Router>
