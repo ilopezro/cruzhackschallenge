@@ -1,6 +1,6 @@
 # Cruz Hacks Backend/Frontend Challenge
 
-#Steps to run app locally 
+# Steps to run app locally 
 1. Clone the repo
 2. Navigate into the root of the project folder and run 
   npm install
@@ -13,7 +13,7 @@
   This will start the server and will then deploy the app in which you will be able to see 
   in localhost:3000 (server will be in localhost:3001)
  
-#Live webpage 
+# Live webpage 
 I have also deployed the webpage using heroku; however, I ran into some issues when it came to loading the page online. 
 The link to the live site is: 
 https://cruzhackschallenge.herokuapp.com/
