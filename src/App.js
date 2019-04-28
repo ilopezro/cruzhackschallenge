@@ -17,7 +17,7 @@ class App extends Component {
     fetch('/');
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.connectToServer()
   }
 
